@@ -16,10 +16,10 @@ function App() {
   }, []);
 
   return (
-    <>
+    <div className="bg-gray-200">
       <Header coinBalance={coinBalance} user={user} />
       <Slot setCoinBalance={setCoinBalance} />
-    </>
+    </div>
   );
 }
 
