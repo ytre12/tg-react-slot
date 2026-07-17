@@ -8,7 +8,7 @@ export default function Header({ coinBalance }) {
           <img
             src={TG.initDataUnsafe?.user?.photo_url ?? ""}
             alt="user"
-            className="w-2"
+            className="w-7 rounded-full"
           />
           <h5 className="font-mono font-medium text-[13px] text-white">
             @{TG.initDataUnsafe?.user?.username ?? "tester"}
