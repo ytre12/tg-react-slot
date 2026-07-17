@@ -3,7 +3,7 @@ import TG from "../tg.js";
 export default function Header({ coinBalance }) {
   return (
     <header className="p-2 bg-gray-400/45 rounded-b-[27px]">
-      <header className="flex justify-between items-center bg-purple-600/80 rounded-3xl p-1 px-6">
+      <header className="flex justify-between items-center bg-purple-600/80 rounded-3xl p-2 px-6">
         <div className="flex items-center gap-2">
           <img
             src={TG.initDataUnsafe?.user?.photo_url ?? ""}
