@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Button from "./Button";
+import Bet from "./Bet";
 
 export default function Slot({ setCoinBalance }) {
   const [win, setWin] = useState(0);
@@ -12,7 +13,7 @@ export default function Slot({ setCoinBalance }) {
   });
 
   function slotSelect(slot) {
-    const result = Math.random() < 0.5;
+    const result = Math.random() < 0.8;
 
     if (!sesionOpen) {
       setCoinBalance((prev) => prev - bet);
@@ -25,7 +26,7 @@ export default function Slot({ setCoinBalance }) {
     }));
 
     if (result) {
-      setWin((prev) => (prev === 0 ? bet * 1.5 : prev * 1.5));
+      setWin((prev) => (prev === 0 ? bet * 1.25 : prev * 1.25));
     } else {
       lose();
     }
@@ -38,7 +39,7 @@ export default function Slot({ setCoinBalance }) {
       slot3: false,
     });
     setWin(0);
-    setBet(0);
+    // setBet(0);
     setSesionOpen(false);
   }
 
@@ -50,13 +51,19 @@ export default function Slot({ setCoinBalance }) {
       slot3: undefined,
     });
     setWin(0);
-    setBet(0);
+    // setBet(0);
     setSesionOpen(false);
+  }
+
+  if (bet < 0) {
+    setBet(0);
   }
 
   return (
     <>
-      <div className="flex justify-center m-8">{win.toFixed(2) + "$"}</div>
+      <div className="flex justify-center m-8 font-extrabold">
+        {win.toFixed(2) + "$"}
+      </div>
       <section className="flex justify-around">
         <Button slot={slots} numberSlot={"slot1"} slotSelect={slotSelect} />
         <Button slot={slots} numberSlot={"slot2"} slotSelect={slotSelect} />
@@ -70,6 +77,9 @@ export default function Slot({ setCoinBalance }) {
           value={bet}
           onChange={(e) => setBet(Number(e.target.value))}
         />
+
+        <Bet setBet={setBet} />
+
         <button
           className="text-center w-full p-2 bg-purple-900/80 text-white font-medium rounded-full mt-3"
           onClick={resetSlot}

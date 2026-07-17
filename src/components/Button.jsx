@@ -8,8 +8,8 @@ export default function Button({ slot, numberSlot, slotSelect }) {
       }}
     >
       {slot[numberSlot] === undefined && "?"}
-      {slot[numberSlot] === true && "Win"}
-      {slot[numberSlot] === false && "Lose"}
+      {slot[numberSlot] === true && "W"}
+      {slot[numberSlot] === false && "L"}
     </button>
   );
 }
