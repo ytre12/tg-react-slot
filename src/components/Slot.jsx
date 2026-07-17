@@ -61,7 +61,7 @@ export default function Slot({ setCoinBalance }) {
 
   return (
     <>
-      <div className="flex justify-center m-8 font-extrabold">
+      <div className="flex justify-center m-8 font-extrabold text-3xl">
         {win.toFixed(2) + "$"}
       </div>
       <section className="flex justify-around">

@@ -1,10 +1,7 @@
-function tgInit() {
-  const tg = window.Telegram?.WebApp;
+const TG = window.Telegram?.WebApp;
 
-  if (!tg) return;
-
-  tg.ready();
-  return tg;
+if (TG) {
+  TG.ready();
 }
 
-export default tgInit();
+export default TG;
