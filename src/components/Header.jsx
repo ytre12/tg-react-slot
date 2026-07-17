@@ -3,12 +3,12 @@ import TG from "../tg.js";
 export default function Header({ coinBalance }) {
   return (
     <header className="p-2 bg-gray-400/45 rounded-b-[27px]">
-      <header className="flex justify-between items-baseline bg-purple-600/80 rounded-3xl p-3 px-5">
-        <div className="flex items-baseline gap-1">
+      <header className="flex justify-between items-center bg-purple-600/80 rounded-3xl p-1 px-6">
+        <div className="flex items-center gap-2">
           <img
             src={TG.initDataUnsafe?.user?.photo_url ?? ""}
             alt="user"
-            className="w-7 rounded-full"
+            className="w-10 rounded-full"
           />
           <h5 className="font-mono font-medium text-[13px] text-white">
             @{TG.initDataUnsafe?.user?.username ?? "tester"}
